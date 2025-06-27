@@ -7,8 +7,8 @@ const AuthWatcher = () => {
       const valid = isTokenValid();
       if (!valid) {
         console.warn('Token expired. Logging out...');
-        //removeToken();
-        //window.location.href = '/login'; // Or use navigate() if inside router
+        removeToken();
+        window.location.href = '/login'; // Or use navigate() if inside router
       }
     };
 

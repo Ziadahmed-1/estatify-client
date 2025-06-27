@@ -1,21 +1,85 @@
 :root {
-  --bg: #f9fafb;
-  --surface: #ffffff;
-  --primary: #2563eb;
-  --secondary: #64748b;
-  --accent: #10b981;
-  --text: #111827;
-  --text-muted: #6b7280;
-  --border: #e5e7eb;
+  /* Absolute Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Purple Shades */
+  --color-purple-60: #703bf7;
+  --color-purple-65: #8254f8;
+  --color-purple-70: #946cf9;
+  --color-purple-75: #703bf7;
+  --color-purple-90: #dbcefd;
+  --color-purple-95: #ede7fe;
+  --color-purple-97: #f4f0fe;
+  --color-purple-99: #fbfaff;
+
+  /* White Shades */
+  --color-white-90: #e4e4e7;
+  --color-white-95: #f1f1f3;
+  --color-white-97: #f7f7f8;
+  --color-white-99: #fcfcfd;
+
+  /* Grey Shades */
+  --color-grey-08: #141414;
+  --color-grey-10: #1a1a1a;
+  --color-grey-15: #262626;
+  --color-grey-20: #333333;
+  --color-grey-30: #4d4d4d;
+  --color-grey-40: #666666;
+  --color-grey-50: #808080;
+  --color-grey-60: #999999;
 }
 
-[data-theme='dark'] {
-  --bg: #0d1117;
-  --surface: #161b22;
-  --primary: #3b82f6;
-  --secondary: #94a3b8;
-  --accent: #22c55e;
-  --text: #f9fafb;
-  --text-muted: #9ca3af;
-  --border: #2f3542;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Urbanist', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glb-btn {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: none;
+  color: var(--color-white);
+}
+
+.glb-btn:hover {
+  opacity: 0.8;
+}
+
+.glb-btn.filled {
+  background-color: var(--color-grey-08);
+  border: 1px solid var(--color-grey-15);
+}
+
+.glb-btn.filled:hover {
+  background-color: var(--color-grey-10);
+  border: 1px solid var(--color-grey-15);
+}
+
+.glb-btn.shaded {
+  background-color: var(--color-grey-10);
+  border: 1px solid var(--color-grey-15);
+}
+
+.glb-btn.shaded:hover {
+  background-color: var(--color-grey-15);
+  border: 1px solid var(--color-grey-20);
+}
+
+.glb-btn.purble {
+  background-color: var(--color-purple-60);
+  border: 1px solid var(--color-purple-60);
+}
+
+.glb-btn.purble:hover {
+  background-color: var(--color-purple-70);
+  border: 1px solid var(--color-purple-70);
 }

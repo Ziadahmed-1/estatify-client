@@ -7,6 +7,7 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import { Toaster } from 'react-hot-toast';
 import MainLayout from './pages/MainLayout';
+import Home from './pages/Home';
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,7 @@ const App = () => {
 
         {/* Protected routes with layout */}
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<div>home</div>} />
+          <Route index element={<Home />} />
           <Route path="dashboard" element={<div>dashboard</div>} />
         </Route>
 
