@@ -9,6 +9,7 @@ import Styles from './PropertiesSection.module.css';
 import nextArrow from '@/assets/icons/rightArrow.png';
 import prevArrow from '@/assets/icons/leftArrow.png';
 import { CircleArrowLeft, CircleArrowRight } from 'lucide-react';
+import SkeletonCard from '../SkelatonCard';
 
 const count = 3;
 function PropertiesSection() {
@@ -34,7 +35,7 @@ function PropertiesSection() {
       <img src={startsImg} alt="starts" />
       <h3>Featured Properties</h3>
       <div className={Styles.line}>
-        <p>
+        <p className={Styles.sectionDescription}>
           Explore our handpicked selection of featured properties. Each listing offers a glimpse
           into exceptional homes and investments available through Estatein. Click "View Details"
           for more information.
@@ -44,9 +45,13 @@ function PropertiesSection() {
 
       <div className={Styles.cardsContainer}>
         {isLoading ? (
-          <p>Loading...</p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <SkeletonCard />
+            <SkeletonCard />
+            <SkeletonCard />
+          </div>
         ) : (
-          properties?.data.map(property => <Property property={property} />)
+          properties?.data.map(property => <Property key={property.id} property={property} />)
         )}
       </div>
       <hr className=" w-full border-0.5 border-stone-500 mt-4 " />

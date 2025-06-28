@@ -13,6 +13,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
 import { Link, useNavigate } from 'react-router';
 import Styles from './NavBar.module.css';
 import logoImage from '@/assets/logo.png';
+import Notifications from './Notifications';
 
 function NavBar() {
   const isMobile = useUIStore(state => state.isMobile);
@@ -102,34 +103,37 @@ function NavBar() {
           ))}
         </ul>
       )}
-      <DropdownMenu>
-        <DropdownMenuTrigger>
-          <Avatar>
-            <AvatarImage className={Styles.avatar} src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          {isMobile && (
-            <>
-              {/* <DropdownMenuLabel>Pages</DropdownMenuLabel>
+      <div className="flex gap-2 items-center">
+        <Notifications />
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <Avatar>
+              <AvatarImage className={Styles.avatar} src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            {isMobile && (
+              <>
+                {/* <DropdownMenuLabel>Pages</DropdownMenuLabel>
               <DropdownMenuSeparator /> */}
-              {mainMenu.map(item => (
-                <DropdownMenuItem key={item.name} onClick={() => item.action()}>
-                  {item.name}
-                </DropdownMenuItem>
-              ))}
-            </>
-          )}
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          {userMenu.map(item => (
-            <DropdownMenuItem key={item.name} onClick={() => item.action()}>
-              {item.name}
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>{' '}
+                {mainMenu.map(item => (
+                  <DropdownMenuItem key={item.name} onClick={() => item.action()}>
+                    {item.name}
+                  </DropdownMenuItem>
+                ))}
+              </>
+            )}
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            {userMenu.map(item => (
+              <DropdownMenuItem key={item.name} onClick={() => item.action()}>
+                {item.name}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>{' '}
+      </div>
     </nav>
   );
 }

@@ -30,5 +30,8 @@ export interface PropertyResponse {
 
 export interface Image {
   id: number;
-  data: string;
+  data: {
+    type: string;
+    data: string;
+  };
 }
